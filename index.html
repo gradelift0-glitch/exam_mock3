@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GradeLift - Upper Limb Mock Exam</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <div class="logo">GradeLift</div>
+            <h1>Upper Limb Mock Exam</h1>
+            <p>Welcome to the mock exam! You have <strong>50 minutes</strong> to complete 60 questions.</p>
+            <p>Good luck!</p>
+            <button id="start-btn" class="btn primary-btn">Start Quiz</button>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen">
+            <header class="quiz-header">
+                <div class="logo-small">GradeLift</div>
+                <div class="timer" id="timer">50:00</div>
+            </header>
+            
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            
+            <div class="question-container">
+                <div class="question-meta">
+                    <span id="question-number">Question 1 of 60</span>
+                    <span id="question-tag" class="badge"></span>
+                </div>
+                <h2 id="question-text">Question text goes here...</h2>
+                <div class="options-container" id="options">
+                    <!-- Options will be injected here -->
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button id="prev-btn" class="btn secondary-btn" disabled>Previous</button>
+                <button id="next-btn" class="btn primary-btn">Next</button>
+                <button id="submit-btn" class="btn danger-btn hidden">Submit Exam</button>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="screen">
+            <div class="logo">GradeLift</div>
+            <h1>Exam Completed!</h1>
+            
+            <div class="score-card">
+                <h2>Your Score</h2>
+                <div class="score-text"><span id="score">0</span> / 60</div>
+                <div class="percentage" id="percentage">0%</div>
+            </div>
+            
+            <!-- Telegram CTA moved above the feedback review -->
+            <div class="cta-section" style="margin-bottom: 2.5rem;">
+                <h3>Ready for the next step?</h3>
+                <p>Master the lower limb anatomy! Join our exclusive Telegram channel for the upcoming Lower Limb class.</p>
+                <a href="https://t.me/gradelift_LL" class="btn primary-btn pulse" target="_blank">Join Telegram Channel</a>
+            </div>
+
+            <div class="feedback-section">
+                <h3>Areas to Review</h3>
+                <p>Based on your performance, focus on these topics:</p>
+                <ul id="weak-tags" class="tags-list">
+                    <!-- Weak tags injected here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
